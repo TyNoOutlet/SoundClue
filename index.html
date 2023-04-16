@@ -23,7 +23,8 @@
             'playsinline': 1
           },
           events: {
-            "onReady": onPlayerReady
+            "onReady": onPlayerReady,
+            "onStateChange": onPlayerStateChange
           }
         });
       };
@@ -31,6 +32,14 @@
         player.setVolume(75);
         event.target.playVideo();
       };
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
     </script>
   </body>
 </html>
