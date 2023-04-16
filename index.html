@@ -5,6 +5,30 @@
   <body>
     <h1>SoundClue</h1>
     <p>We're being built right now.</p>
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/lfGSquzcBp0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+    <div id="player"></div>
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '10',
+          width: '10',
+          videoId: 'lfGSquzcBp0',
+          playerVars: {
+            'playsinline': 1
+          },
+        });
+      }
+      player.playVideo();
+      setTimeout(player.pauseVideo(), 1000);
+    </script>
   </body>
 </html>
