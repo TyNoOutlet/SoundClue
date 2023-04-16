@@ -34,9 +34,11 @@
         player.setVolume(75);
         event.target.playVideo();
       };
+      var done = false;
       function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
           setTimeout(stopVideo, 6000);
+          done = true;
         }
       }
       function stopVideo() {
