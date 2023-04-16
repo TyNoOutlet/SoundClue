@@ -23,16 +23,12 @@
 
     function onPlayerReady(event) {
         // Play the video
-        player.playVideo();
+        setTimeout(function() {player.playVideo()}, 4000);
 
         // Pause the video after one second
         setTimeout(function() {
           player.pauseVideo();
         }, 2000);
-      
-      var message = JSON.stringify({ event: 'listening' });
-      var targetOrigin = '*';
-      event.target.postMessage(message, targetOrigin);
     }
     </script>
   </body>
