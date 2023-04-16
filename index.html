@@ -6,13 +6,8 @@
     <h1>SoundClue</h1>
     <p>We're being built right now.</p>
     <div id="player"></div>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
-      var tag = document.createElement('script');
-
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
     var player;
 
     function onYouTubeIframeAPIReady() {
@@ -35,7 +30,6 @@
           player.pauseVideo();
         }, 2000);
     }
-
     </script>
   </body>
 </html>
