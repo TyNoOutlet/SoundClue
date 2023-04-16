@@ -39,7 +39,7 @@
       var done = false;
       function onPlayerStateChange(event) {
              console.log('logging?');
-        if (event.data == YT.PlayerState.PLAYING && !done) {
+        if (player.getPlayerState() == 1 && !done) {
           setTimeout(stopVideo, 6000);
           done = true;
         }
