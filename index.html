@@ -38,7 +38,7 @@
       };
       var done = false;
       function onPlayerStateChange(event) {
-             console.log('logging?');
+        console.log(player.getPlayerState());
         if (player.getPlayerState() == 1 && !done) {
           setTimeout(stopVideo, 6000);
           done = true;
