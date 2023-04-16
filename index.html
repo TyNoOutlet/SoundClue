@@ -24,17 +24,9 @@
             'origin': window.location.href
           },
           events: {
-            "onReady": onPlayerReady,
             "onStateChange": onPlayerStateChange
           }
         });
-      };
-      function onPlayerReady(event) {
-        setTimeout(console.log('waited'), 2000);
-        player.setVolume(75);
-        console.log('volume set');
-        player.playVideo();
-        console.log('this registered');
       };
       var done = false;
       function onPlayerStateChange(event) {
@@ -48,6 +40,7 @@
         player.stopVideo();
         console.log('done already?');
       }
+      setTimeout(player.playVideo, 10000);
     </script>
   </body>
 </html>
